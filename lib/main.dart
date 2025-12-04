@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:yummygo/controllers/authentication_controller.dart';
 import 'package:yummygo/controllers/cart_controller.dart';
 import 'package:yummygo/controllers/menu_controller.dart';
-import 'package:yummygo/firebase_options.dart';
 import 'package:yummygo/views/splash_screen/splash_screen.dart';
 
 Future<void> main() async {
