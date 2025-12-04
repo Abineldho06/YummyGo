@@ -91,3 +91,22 @@ Includes:
 | **Lottie** | Animations |
 | **Google Fonts** | Modern, clean typography |
 
+## 📸 App Screenshots
+
+### Splash Screen
+<img src="screenshorts/splashscreen.jpg" width="300"/>
+
+### Onboarding
+<img src="screenshorts/onboardingscreen.jpg" width="300"/>
+
+### Authentication Screen
+<img src="screenshorts/authenticationscreen.jpg" width="300"/>
+
+### Home Screen
+<img src="screenshorts/homescreen.jpg" width="300"/>
+
+### Cart
+<img src="screenshorts/cartscreen.jpg" width="300"/>
+
+### Checkout
+<img src="screenshorts/orderplacedmsg.jpg" width="300"/>
