@@ -22,37 +22,48 @@ class OTPScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
+            //Text
             Text("OTP sent to $phone"),
             SizedBox(height: 20),
-            TextField(
-              controller: otpController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: "Enter OTP",
-              ),
-            ),
+            //OTP Text Field
+            textfield(),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () async {
-                bool ok = await provider.verifyOTP(otpController.text.trim());
-
-                if (ok) {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (_) => HomeScreen()),
-                    (route) => false,
-                  );
-                } else {
-                  ScaffoldMessenger.of(
-                    context,
-                  ).showSnackBar(SnackBar(content: Text("Invalid OTP")));
-                }
-              },
-              child: Text("Verify"),
-            ),
+            //Button
+            Button(provider, context),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget Button(AuthenticationController provider, BuildContext context) {
+    return ElevatedButton(
+      onPressed: () async {
+        bool ok = await provider.verifyOTP(otpController.text.trim());
+
+        if (ok) {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => HomeScreen()),
+            (route) => false,
+          );
+        } else {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text("Invalid OTP")));
+        }
+      },
+      child: Text("Verify"),
+    );
+  }
+
+  Widget textfield() {
+    return TextField(
+      controller: otpController,
+      keyboardType: TextInputType.number,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: "Enter OTP",
       ),
     );
   }

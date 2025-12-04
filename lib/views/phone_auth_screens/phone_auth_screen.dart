@@ -61,56 +61,63 @@ class PhoneLoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: .start,
               children: [
-                Image.asset(
-                  'assets/images/logotext.png',
-                  width: 200,
-                  height: 200,
-                ),
-                TextField(
-                  controller: phoneController,
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Enter Mobile Number",
-                    labelStyle: TextStyle(color: Colors.black),
-                    prefixText: "+91 ",
-                  ),
-                ),
+                //logo image
+                image(),
+                //Phone Text Field
+                methodtextField(),
                 SizedBox(height: 20),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.black),
-                  ),
-                  onPressed: () {
-                    final phone = "+91${phoneController.text.trim()}";
-
-                    provider.sendOTP(
-                      phoneNumber: phone,
-                      onCodeSent: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => OTPScreen(phone: phone),
-                          ),
-                        );
-                      },
-                      onError: (err) {
-                        ScaffoldMessenger.of(
-                          context,
-                        ).showSnackBar(SnackBar(content: Text(err)));
-                      },
-                    );
-                  },
-                  child: Text(
-                    "Send OTP",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
+                //Button
+                sendotpbutton(provider, context),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Widget image() {
+    return Image.asset('assets/images/logotext.png', width: 200, height: 200);
+  }
+
+  Widget methodtextField() {
+    return TextField(
+      controller: phoneController,
+      keyboardType: TextInputType.phone,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: "Enter Mobile Number",
+        labelStyle: TextStyle(color: Colors.black),
+        prefixText: "+91 ",
+      ),
+    );
+  }
+
+  Widget sendotpbutton(
+    AuthenticationController provider,
+    BuildContext context,
+  ) {
+    return ElevatedButton(
+      style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(Colors.black)),
+      onPressed: () {
+        final phone = "+91${phoneController.text.trim()}";
+
+        provider.sendOTP(
+          phoneNumber: phone,
+          onCodeSent: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => OTPScreen(phone: phone)),
+            );
+          },
+          onError: (err) {
+            ScaffoldMessenger.of(
+              context,
+            ).showSnackBar(SnackBar(content: Text(err)));
+          },
+        );
+      },
+      child: Text("Send OTP", style: TextStyle(color: Colors.white)),
     );
   }
 }

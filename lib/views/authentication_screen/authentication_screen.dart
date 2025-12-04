@@ -33,16 +33,20 @@ class AuthenticationScreen extends StatelessWidget {
         width: MediaQuery.sizeOf(context).width * .9,
         height: MediaQuery.sizeOf(context).height * .5,
         decoration: BoxDecoration(
-          color: Colors.white54,
+          color: Colors.black54,
           border: Border.all(color: Colors.white70),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
-          mainAxisAlignment: .start,
+          mainAxisAlignment: .center,
           children: [
+            //yummyGo Text
             logo(),
+            SizedBox(height: 50),
+            //Email Button
             gmailButton(context),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
+            //Phone Button
             phoneButton(context),
           ],
         ),
@@ -51,11 +55,12 @@ class AuthenticationScreen extends StatelessWidget {
   }
 
   Widget logo() {
-    return Container(
-      width: 200,
-      height: 200,
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/logotext.png')),
+    return Text(
+      "YummiGo",
+      style: GoogleFonts.poppins(
+        color: Colors.white,
+        fontWeight: .bold,
+        fontSize: 30,
       ),
     );
   }
@@ -84,7 +89,7 @@ class AuthenticationScreen extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.blue,
+            color: Colors.white60,
             borderRadius: BorderRadius.circular(30),
           ),
           child: Padding(
@@ -101,7 +106,7 @@ class AuthenticationScreen extends StatelessWidget {
                   "Sign in with Google",
                   style: GoogleFonts.montserrat(
                     color: Colors.white,
-                    fontWeight: .w500,
+                    fontWeight: .w600,
                   ),
                 ),
               ],
@@ -124,7 +129,7 @@ class AuthenticationScreen extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.black,
+            color: Colors.white54,
             borderRadius: BorderRadius.circular(30),
           ),
           child: Padding(
@@ -141,7 +146,7 @@ class AuthenticationScreen extends StatelessWidget {
                   "Sign in with Mobile",
                   style: GoogleFonts.montserrat(
                     color: Colors.white,
-                    fontWeight: .w500,
+                    fontWeight: .w600,
                   ),
                 ),
               ],

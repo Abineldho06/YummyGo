@@ -28,7 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
 
-    // Fetch API only once
     Future.microtask(() {
       Provider.of<MenuControllerprovider>(context, listen: false).fetchMenu();
     });
@@ -91,6 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(width: 10),
           ],
 
+          //TabBar section
           bottom: menu.isLoading
               ? null
               : TabBar(
@@ -116,8 +116,10 @@ class _HomeScreenState extends State<HomeScreen> {
             : Column(
                 children: [
                   SizedBox(height: 10),
+                  //CarouselSlider
                   carouselSlider(),
                   SizedBox(height: 10),
+                  //Disehs
                   Expanded(
                     child: TabBarView(
                       children: List.generate(menu.categories.length, (index) {
