@@ -1,123 +1,93 @@
-🍽️ YummiGo — Flutter Machine Test (Zartek)
+# 🍽️ YummiGo — Flutter Machine Test (Zartek)
 
-A fully functional food ordering mobile app built using Flutter, completing the Zartek machine test requirements.
-The app includes Google Authentication, Menu API integration, Category-based UI, Cart system, Checkout flow, and clean Provider-based state management.
+A fully functional food ordering mobile app built using **Flutter**, completing the Zartek machine test requirements.  
+The app includes **Google Authentication**, **Menu API integration**, **Category-based UI**, **Cart system**, **Checkout flow**, and **clean Provider-based state management**.
 
-This project also includes several extra features beyond the assignment requirements, making the UI smoother, cleaner, and more production-ready.
+This project also includes several **extra features beyond the assignment requirements**, making the UI smoother, cleaner, and more production-ready.
 
-🚀 Features Implemented
-✅ 1. Google Sign-In Authentication
+---
 
-Secure login using Google OAuth
+## 🚀 Features Implemented
 
-Stores session to avoid repeated logins
+### ✅ 1. Google Sign-In Authentication
+- Secure login using Google OAuth  
+- Stores session to avoid repeated logins  
+- Logout functionality included  
 
-Logout functionality included
+---
 
-✅ 2. Splash Screen + Onboarding Flow
+### ✅ 2. Splash Screen + Onboarding Flow
+- Custom animated splash screen  
+- Smooth fade transition  
+- Onboarding screens introducing app features  
 
-Custom animated splash screen
+---
 
-Smooth fade transition
+### ✅ 3. Menu API Integration
 
-Onboarding screens introducing app features
-
-✅ 3. Menu API Integration
-
-Fetched data from:
-https://faheemkodi.github.io/mock-menu-api/menu.json
+Fetched data from:  
+`https://faheemkodi.github.io/mock-menu-api/menu.json`
 
 Includes:
+- Categories  
+- Dishes list  
+- Addons  
+- Calories  
+- Veg/Non-Veg indicators  
+- Customization availability  
 
-Categories
+---
 
-Dishes list
+### ✅ 4. Home Screen (Dynamic UI)
+- Tab bar showing all categories  
+- Horizontal scrolling category tabs  
+- Dish tiles for each category with full details  
+- High-quality images & clean UI  
 
-Addons
+---
 
-Calories
+### ✅ 5. Cart System (Provider State Management)
+- Add to cart  
+- Remove from cart  
+- Increase/decrease quantity  
+- Prevent duplicate items  
+- Dynamic total price calculation  
+- Real-time cart updates  
 
-Veg/Non-Veg indicators
+---
 
-Customization availability
+### ✅ 6. Checkout Screen
+- Order summary with quantity updates  
+- Lottie animations  
+- Success pop-up with cart clearing  
 
-✅ 4. Home Screen (Dynamic UI)
+---
 
-Tab bar showing all categories
+## 🔥 Additional Features Added (NOT part of requirement)
 
-Horizontal scrolling category tabs
+| Feature | Description |
+|--------|-------------|
+| ⭐ Elegant UI Enhancements | Used Google Fonts, custom tiles, shadows, rounded cards |
+| ⭐ Lottie Animations | Added empty cart + success animations |
+| ⭐ Profile Drawer | Shows user info + logout button |
+| ⭐ DishTile Component | Clean reusable widget for dish UI |
+| ⭐ API Error Handling | Prevents crashes if API fails |
+| ⭐ Provider Architecture | Clear separation of logic (MVC-like) |
+| ⭐ Animated Transitions | Smooth splash → onboarding → home |
+| ⭐ Veg / Non-Veg Indicators | Professional restaurant-style icons |
+| ⭐ Addons/Customization Ready | Designed for future upgrades |
 
-Dish tiles for each category with all details
+---
 
-High-quality images & clean UI
+## 🛠️ Tech Stack
 
-✅ 5. Cart System (Provider State Management)
+| Technology | Purpose |
+|-----------|---------|
+| **Flutter** | App development |
+| **Dart** | Programming language |
+| **Provider** | State management |
+| **Google Sign-In** | Authentication |
+| **HTTP package** | API calls |
+| **Lottie** | Animations |
+| **Google Fonts** | Modern, clean typography |
 
-Add to cart
-
-Remove from cart
-
-Increase/decrease quantity
-
-Prevent duplicate items
-
-Dynamic total price calculation
-
-Real-time cart updates
-
-✅ 6. Checkout Screen
-
-Order summary
-
-Update quantities inside checkout
-
-Lottie animations
-
-Success pop-up with cart clearing
-
-🔥 7. Additional Features Added
-
-⭐ Elegant UI enhancements	Used Google Fonts, shadows, rounded cards, and responsive layout
-⭐ Lottie Animations	Added empty cart animation & success animation
-⭐ Profile Drawer	Shows user info and logout button
-⭐ DishTile Component	Custom reusable tile widget for cleaner code
-⭐ API Error Handling	Helps avoid app crashes on API failure
-⭐ Provider Architecture	Clean separation: controllers, models, services
-⭐ Animated transitions	Smooth splash → onboarding → home navigation
-⭐ Custom Veg / Non-Veg indicators	Professional UI for food items
-⭐ Addons & Customizations UI prepared	Supports future expansion
-
-🛠️ Tech Stack
-Technology	Usage
-Flutter	App development
-Dart	Language
-Provider	State management
-Google Sign-In	Authentication
-HTTP Package	API calls
-Lottie	Animations
-Google Fonts	Modern UI typography
-
-📂 Project Structure
-lib/
- ├── controllers/
- │     ├── authentication_controller.dart
- │     ├── menu_controller.dart
- │     └── cart_controller.dart
- │
- ├── models/
- │     ├── category_model.dart
- │     ├── dish_model.dart
- │     └── addon_model.dart
- │
- ├── services/
- │     └── api_service.dart
- │
- ├── views/
- │     ├── splash_screen/
- │     ├── onboarding_screen/
- │     ├── home_screen/
- │     ├── checkout_screen/
- │     └── widgets/ (dish tiles, cards)
- │
- └── main.dart
- 
