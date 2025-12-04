@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:yummygo/views/authentication_screen/authentication_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -66,7 +67,18 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 50),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        PageRouteBuilder(
+                          transitionDuration: Duration(milliseconds: 100),
+                          pageBuilder: (_, animation, _) => FadeTransition(
+                            opacity: animation,
+                            child: AuthenticationScreen(),
+                          ),
+                        ),
+                      );
+                    },
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(

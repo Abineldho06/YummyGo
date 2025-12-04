@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         PageRouteBuilder(
-          transitionDuration: Duration(milliseconds: 700),
+          transitionDuration: Duration(milliseconds: 900),
           pageBuilder: (_, animation, _) =>
               FadeTransition(opacity: animation, child: OnboardingScreen()),
         ),
